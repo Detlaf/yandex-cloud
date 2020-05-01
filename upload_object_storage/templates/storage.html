@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlaskDrive</title>
+  </head>
+  <body>
+    <div class="content">
+        <h3>Celus-1: upload files to Object Storage</h3>
+        <div>
+          <h3>Upload your file here:</h3>
+          <form method="POST" action="/upload" enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+          </form>
+        </div>
+        <div>
+          <h3>These are your uploaded files:</h3>
+          <ul>
+            {% for item in contents %}
+              <li>
+                <!-- <a href="/download/{{ item.Key }}"> {{ item.Key }} </a> -->
+                <h5>{{item.Key}}</h4>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>
